@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BoardGamerApp.MainPage"
+             Title="Home">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="5,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Nächster Spieleabend"
+                TextColor="DarkSlateGrey"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Freitag, 27. Januar 2023"
+                TextColor="Green"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Image
+                Source="board_game.jpg"
+                SemanticProperties.Description="Board Game Picture"
+                HeightRequest="200"
+                HorizontalOptions="Fill" />
+
+            <Label
+                Text="18 Uhr bei "
+                TextColor="Green"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Anton"
+                TextColor="Green"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Spielstraße 321, 91827 Brettspielhausen"
+                TextColor="DarkSlateGrey"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="address of board game host"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="GameBoardSuggestion"
+                Text="Spiel vorschlagen und abstimmen"
+                FontSize="18"
+                SemanticProperties.Hint="A Game Board can be suggested"
+                Clicked="NavigateToGameBoardSuggestion"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="WriteAMessagge"
+                Text="Nachricht schreiben"
+                FontSize="18"
+                BackgroundColor="DarkOrange"
+                SemanticProperties.Hint="A message can be written to all board gamers"
+                Clicked="NavigateToWriteAMessage"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

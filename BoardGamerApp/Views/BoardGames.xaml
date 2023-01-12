@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:BoardGamerApp.ViewModels"
+             x:Class="BoardGamerApp.Views.BoardGames"
+             x:DataType="viewModel:BoardGamesViewModel"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="*,Auto" RowSpacing="10">
+        <CollectionView ItemsSource="{Binding Games}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewModel:BoardGameViewModel">
+                    <Frame HeightRequest="80" Margin="8" Padding="0">
+                        <Grid ColumnDefinitions="80, *, Auto" RowDefinitions="*, Auto">
+                            <Label Grid.Column="1" 
+                               Padding="10"
+                               FontSize="Subtitle"
+                               FontAttributes="Bold"
+                               VerticalOptions="StartAndExpand"
+                               Text="{Binding Title}" />
+                            <Label Grid.Column="1" Grid.Row="1"
+                               VerticalOptions="End"
+                               Padding="10"
+                               Text="{Binding Votes, StringFormat='Stimmen: {0}'}"
+                               />
+                            <Image Grid.RowSpan="2"
+                               WidthRequest="80"
+                               HeightRequest="80"
+                               Aspect="Fill"
+                               Source="{Binding Image}"/>
+                            <ImageButton Grid.RowSpan="2"
+                                     Grid.Column="2"
+                                     BackgroundColor="{Binding ButtonColor, Mode=TwoWay}"
+                                     VerticalOptions="Center"
+                                     Margin="10"
+                                     Padding="8"
+                                     WidthRequest="60"
+                                     HeightRequest="60"
+                                     CornerRadius="20"
+                                     Aspect="Fill"
+                                     Source="thumbsup.png"
+                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:BoardGamesViewModel}}, Path=VoteGame}"
+                                     CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Frame Grid.Row="1"
+               Margin="10"
+               Padding="4"
+               BackgroundColor="{StaticResource Gray100}"
+               BorderColor="Transparent"
+               CornerRadius="24">
+            <Grid ColumnDefinitions="*,Auto">
+                <Entry Grid.Column="0"
+                       Margin="8,0"
+                       Placeholder="Neues Spiel vorschlagen..."
+                       PlaceholderColor="{StaticResource Black}"
+                       Text="{Binding NewGame, Mode=TwoWay}"
+                       MaxLength="50"
+                       FontSize="Header"
+                       />
+                <ImageButton Grid.Column="1"
+                             BackgroundColor="{StaticResource Primary}"
+                             WidthRequest="40"
+                             HeightRequest="40"
+                             CornerRadius="20"
+                             Source="send.png"
+                             Command="{Binding AddGame}" />
+
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

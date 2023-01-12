@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="BoardGamerApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BoardGamerApp"
+    xmlns:view="clr-namespace:BoardGamerApp.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Spiele"
+        ContentTemplate="{DataTemplate view:BoardGames}"
+        Route="BoardGames" />
+    
+    <ShellContent
+        Title="Spieltermine"
+        ContentTemplate="{DataTemplate view:GameAppointments}"
+        Route="GameAppointments" />
+
+    <ShellContent
+        Title="Event bewerten"
+        ContentTemplate="{DataTemplate view:RateEvent}"
+        Route="RateEvent" />
+
+</Shell>
