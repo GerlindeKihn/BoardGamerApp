@@ -56,13 +56,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\Messages.xaml.cs">
+	    <DependentUpon>Messages.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="Views\BoardGames.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\GameAppointments.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Message.xaml">
+	  <MauiXaml Update="Views\Messages.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\RateEvent.xaml">

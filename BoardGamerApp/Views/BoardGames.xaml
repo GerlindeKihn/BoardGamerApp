@@ -50,7 +50,7 @@
         <Frame Grid.Row="1"
                Margin="10"
                Padding="4"
-               BackgroundColor="{StaticResource Gray100}"
+               BackgroundColor="{StaticResource Secondary}"
                BorderColor="Transparent"
                CornerRadius="24">
             <Grid ColumnDefinitions="*,Auto">

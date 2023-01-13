@@ -12,16 +12,25 @@ public class BoardGameViewModel : BaseViewModel
         IsVoted = game.IsVoted;
     }
 
+    private string title;
+    public string Title
+    {
+        get { return title; }
+        set { SetProperty(ref title, value, nameof(Title)); }
+    }
+
     public string Image { get; }
 
     private int votes;
-    public int Votes {
+    public int Votes 
+    {
         get { return votes; }
         set { SetProperty(ref votes, value, nameof(Votes)); }
     }
     
     private bool isVoted;
-    public bool IsVoted {
+    public bool IsVoted 
+    {
         get { return isVoted; }
         set {
             SetProperty(ref isVoted, value, nameof(IsVoted));
@@ -30,7 +39,8 @@ public class BoardGameViewModel : BaseViewModel
     }
 
     private Color buttonColor;
-    public Color ButtonColor {
+    public Color ButtonColor 
+    {
         get { return buttonColor; }
         set { SetProperty(ref buttonColor, value, nameof(ButtonColor)); }
     }

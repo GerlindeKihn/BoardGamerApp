@@ -18,7 +18,7 @@ public partial class MainPage : ContentPage
 
     private async void NavigateToWriteAMessage(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(Message));
+        await Shell.Current.GoToAsync(nameof(Messages));
     }
 
     private async void NavigateBackFromBoardSuggestion(object sender, EventArgs e)

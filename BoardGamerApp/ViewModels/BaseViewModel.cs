@@ -4,12 +4,6 @@ namespace BoardGamerApp.ViewModels;
 
 public class BaseViewModel : INotifyPropertyChanged
 {
-    private string title; 
-    public string Title {
-        get { return title; }
-        set { SetProperty(ref title, value, nameof(Title)); }
-    }
-
     protected void SetProperty<T>(
         ref T field,
         T value,

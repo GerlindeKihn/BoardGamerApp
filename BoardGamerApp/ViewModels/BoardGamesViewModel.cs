@@ -6,18 +6,28 @@ namespace BoardGamerApp.ViewModels;
 
 public class BoardGamesViewModel : BaseViewModel
 {
-    private readonly IGamesWebClient webClient;
+    private string title;
+    public string Title
+    {
+        get { return title; }
+        set { SetProperty(ref title, value, nameof(Title)); }
+    }
+
+    private string newGame;
+    public string NewGame
+    {
+        get { return newGame; }
+        set { SetProperty(ref newGame, value, nameof(NewGame)); }
+    }
 
     public BoardGamesViewModel(IGamesWebClient webClient)
     {
-        this.webClient = webClient;
-
         Title = "Spiele";
         Games = new();
 
         GetGames = new(async() =>
         {
-            var games = await webClient.GetGames();
+            List<Game> games = await webClient.GetGames();
             foreach (var game in games.Select(game => new BoardGameViewModel(game))) Games.Add(game);
         });
 
@@ -45,10 +55,4 @@ public class BoardGamesViewModel : BaseViewModel
     public Command GetGames { get; }
     public Command AddGame { get; }
     public Command<BoardGameViewModel> VoteGame { get; }
-
-    private string newGame;
-    public string NewGame { 
-        get { return newGame; }
-        set { SetProperty(ref newGame, value, nameof(NewGame)); }
-    }
 }
