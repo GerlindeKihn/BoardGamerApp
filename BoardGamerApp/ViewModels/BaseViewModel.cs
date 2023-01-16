@@ -7,11 +7,9 @@ public class BaseViewModel : INotifyPropertyChanged
     protected void SetProperty<T>(
         ref T field,
         T value,
-        string propertyName,
-        IEqualityComparer<T> comparer = null)
+        string propertyName)
     {
-        comparer ??= EqualityComparer<T>.Default;
-        if (comparer.Equals(field, value)) return;
+        if (EqualityComparer<T>.Default.Equals(field, value)) return;
 
         field = value;
         RaisePropertyChangedEvent(propertyName);
@@ -19,8 +17,9 @@ public class BaseViewModel : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    private void RaisePropertyChangedEvent(string propertyName)
+    protected void RaisePropertyChangedEvent(params string[] propertyNames)
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        foreach(var propertyName in propertyNames)
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

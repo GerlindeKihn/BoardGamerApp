@@ -1,7 +1,6 @@
 ﻿using BoardGamerApp.Interfaces;
 using BoardGamerApp.Models;
 using System.Collections.ObjectModel;
-using System.Net;
 
 namespace BoardGamerApp.ViewModels
 {

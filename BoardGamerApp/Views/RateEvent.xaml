@@ -1,12 +1,148 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:BoardGamerApp.ViewModels"
+             xmlns:enum="clr-namespace:BoardGamerApp.Enums"
              x:Class="BoardGamerApp.Views.RateEvent"
-             Title="Event bewerten">
+             x:DataType="viewModel:EventRatingViewModel"
+             Title="{Binding Title}">
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+        <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" Margin="10,10,10,25" RowSpacing="10">
+            <Label Grid.ColumnSpan="2" 
+               Text="Letzter Spieleabend"
+               FontSize="Large"/>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="0">
+                <Label Text="bei"
+                   FontSize="Small"/>
+                <Label Text="{Binding HostName}"
+                   FontSize="Medium" FontAttributes="Bold"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand">
+                <Label Text="am"
+                   FontSize="Small"/>
+                <Label Text="{Binding LastEvent, StringFormat='{0:dd.MM.yyyy}'}" 
+                   FontSize="Medium" FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <Frame Margin="10" Padding="10">
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" RowSpacing="10">
+                <Label Grid.ColumnSpan="3" 
+                       Text="Gastgeber*in"
+                       FontSize="Large" />
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="0" 
+                             Source="glad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding HostRating.Glad, Mode=TwoWay}"
+                             Command="{Binding SetHostRating}"
+                             CommandParameter="{x:Static enum:Rating.Glad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="1" 
+                             Source="mad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding HostRating.Mad}"
+                             Command="{Binding SetHostRating}"
+                             CommandParameter="{x:Static enum:Rating.Mad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="2" 
+                             Source="sad.svg" 
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding HostRating.Sad}"
+                             Command="{Binding SetHostRating}"
+                             CommandParameter="{x:Static enum:Rating.Sad}"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10" Padding="10">
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" RowSpacing="10">
+                <Label Grid.ColumnSpan="3" 
+                       Text="Essen"
+                       FontSize="Large" />
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="0" 
+                             Source="glad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding DinnerRating.Glad, Mode=TwoWay}"
+                             Command="{Binding SetDinnerRating}"
+                             CommandParameter="{x:Static enum:Rating.Glad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="1" 
+                             Source="mad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding DinnerRating.Mad}"
+                             Command="{Binding SetDinnerRating}"
+                             CommandParameter="{x:Static enum:Rating.Mad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="2" 
+                             Source="sad.svg" 
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding DinnerRating.Sad}"
+                             Command="{Binding SetDinnerRating}"
+                             CommandParameter="{x:Static enum:Rating.Sad}"/>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10" Padding="10">
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" RowSpacing="10">
+                <Label Grid.ColumnSpan="3"  
+                       Text="Spieleabend allgemein"
+                       FontSize="Large" />
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="0" 
+                             Source="glad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding EveningRating.Glad, Mode=TwoWay}"
+                             Command="{Binding SetEveningRating}"
+                             CommandParameter="{x:Static enum:Rating.Glad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="1" 
+                             Source="mad.svg"  
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding EveningRating.Mad}"
+                             Command="{Binding SetEveningRating}"
+                             CommandParameter="{x:Static enum:Rating.Mad}"/>
+                <ImageButton Grid.Row="1" 
+                             Grid.Column="2" 
+                             Source="sad.svg" 
+                             Margin="5"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             CornerRadius="25"
+                             BackgroundColor="{Binding EveningRating.Sad}"
+                             Command="{Binding SetEveningRating}"
+                             CommandParameter="{x:Static enum:Rating.Sad}"/>
+            </Grid>
+        </Frame>
+        
+        
+
     </VerticalStackLayout>
+
 </ContentPage>

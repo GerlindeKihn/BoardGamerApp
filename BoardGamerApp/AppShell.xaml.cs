@@ -9,6 +9,6 @@ public partial class AppShell : Shell
 		InitializeComponent();
 
         Routing.RegisterRoute(nameof(BoardGames), typeof(BoardGames));
-        Routing.RegisterRoute(nameof(Messages), typeof(Messages));
+        Routing.RegisterRoute(nameof(Views.Messages), typeof(Views.Messages));
     }
 }

@@ -11,7 +11,7 @@
             VerticalOptions="Center">
 
             <Label
-                Text="Nächster Spieleabend"
+                Text="Nächster Spieleabend:"
                 TextColor="DarkSlateGrey"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
@@ -45,11 +45,19 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Spielstraße 321, 91827 Brettspielhausen"
+                Text="Spielstraße 321"
                 TextColor="DarkSlateGrey"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="address of board game host"
-                FontSize="18"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="91827 Brettspielhausen"
+                TextColor="DarkSlateGrey"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="address of board game host"
+                FontSize="20"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>

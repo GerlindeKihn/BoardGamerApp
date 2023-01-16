@@ -7,9 +7,9 @@ internal class MessagesWebClientMock : IMessagesWebClient
 {
     private static readonly List<Message> Messages = new()
     {
-        new() {Text = "Die Pizzen sind für heute Abend schon bestellt!", Sender = "Gusti", TimeStamp = DateTime.Now.AddMinutes(-90)},
+        new() {Text = "Die Pizzen sind für heute Abend schon bestellt!", Sender = "Anton", TimeStamp = DateTime.Now.AddMinutes(-90)},
         new() {Text = "Wunderbar! Bin schon gespannt, wie die vom neuen Lokal sind :)", Sender = "Du", TimeStamp = DateTime.Now.AddMinutes(-83)},
-        new() {Text = "Ich bring noch Knabberzeugs mit.", Sender = "Rudi", TimeStamp = DateTime.Now.AddMinutes(-73)},
+        new() {Text = "Ich bring noch Knabberzeugs mit.", Sender = "Gusti", TimeStamp = DateTime.Now.AddMinutes(-73)},
         new() {Text = "Freu mich auf den Spieleabend! Bis nachher :-)", Sender = "Lizzy", TimeStamp = DateTime.Now.AddMinutes(-68)},
     };
 
