@@ -26,7 +26,7 @@ public static class MauiProgram
         builder.Services.AddTransient<BoardGamesViewModel>();
         builder.Services.AddSingleton<IGamesWebClient, GamesWebClientMock>();
 
-        builder.Services.AddTransient<Messages>();
+        builder.Services.AddTransient<Views.Messages>();
         builder.Services.AddTransient<MessagesViewModel>();
         builder.Services.AddSingleton<IMessagesWebClient, MessagesWebClientMock>();
 
