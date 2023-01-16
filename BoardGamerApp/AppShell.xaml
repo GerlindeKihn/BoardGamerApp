@@ -5,27 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BoardGamerApp"
     xmlns:view="clr-namespace:BoardGamerApp.Views"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Disabled">
 
+    <TabBar>
+        <Tab Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+        </Tab>
+        <Tab Icon="dice.png">
+            <ShellContent ContentTemplate ="{DataTemplate view:BoardGames}" />
+        </Tab>
+        <Tab Icon="chat.png">
+            <ShellContent ContentTemplate ="{DataTemplate view:Messages}" />
+        </Tab>
+        <Tab Icon="calendar.png">
+            <ShellContent ContentTemplate ="{DataTemplate view:GameAppointments}" />
+        </Tab>
+        <Tab Icon="star.png">
+            <ShellContent ContentTemplate ="{DataTemplate view:RateEvent}" />
+        </Tab>
+    </TabBar>
     
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
-    <ShellContent
-        Title="Spiele"
-        ContentTemplate="{DataTemplate view:BoardGames}"
-        Route="BoardGames" />
-    
-    <ShellContent
-        Title="Spieltermine"
-        ContentTemplate="{DataTemplate view:GameAppointments}"
-        Route="GameAppointments" />
-
-    <ShellContent
-        Title="Event bewerten"
-        ContentTemplate="{DataTemplate view:RateEvent}"
-        Route="RateEvent" />
-
 </Shell>
