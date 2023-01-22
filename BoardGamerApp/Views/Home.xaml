@@ -1,65 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BoardGamerApp.MainPage"
-             Title="Home">
+             xmlns:viewModel="clr-namespace:BoardGamerApp.ViewModels"
+             x:Class="BoardGamerApp.Views.Home"
+             x:DataType="viewModel:HomeViewModel"
+             Title="{Binding Title}">
 
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="5,0"
             VerticalOptions="Center">
-
             <Label
                 Text="Nächster Spieleabend:"
                 TextColor="DarkSlateGrey"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
-
             <Label
-                Text="Freitag, 27. Januar 2023"
+                Text="{Binding NextEvent, StringFormat='{0:dddd, dd. MMMM yyyy}'}"
                 TextColor="Green"
                 SemanticProperties.HeadingLevel="Level2"
                 FontSize="32"
                 HorizontalOptions="Center" />
-
             <Image
                 Source="board_game.jpg"
                 SemanticProperties.Description="Board Game Picture"
                 HeightRequest="200"
                 HorizontalOptions="Fill" />
-
             <Label
                 Text="18 Uhr bei "
                 TextColor="Green"
                 SemanticProperties.HeadingLevel="Level2"
                 FontSize="32"
                 HorizontalOptions="Center" />
-
             <Label
-                Text="Anton"
+                Text="{Binding Name}"
                 TextColor="Green"
                 SemanticProperties.HeadingLevel="Level2"
                 FontSize="32"
                 HorizontalOptions="Center" />
-
             <Label
-                Text="Spielstraße 321"
+                Text="{Binding Street}"
                 TextColor="DarkSlateGrey"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="address of board game host"
                 FontSize="20"
                 HorizontalOptions="Center" />
-
             <Label
-                Text="91827 Brettspielhausen"
+                Text="{Binding Place}"
                 TextColor="DarkSlateGrey"
                 SemanticProperties.HeadingLevel="Level3"
                 SemanticProperties.Description="address of board game host"
                 FontSize="20"
                 HorizontalOptions="Center" />
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

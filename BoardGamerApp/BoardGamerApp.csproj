@@ -68,6 +68,9 @@
 	  <MauiXaml Update="Views\GameAppointments.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Home.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\Messages.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

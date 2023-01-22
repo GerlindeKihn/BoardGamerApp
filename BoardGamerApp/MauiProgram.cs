@@ -2,6 +2,7 @@
 using BoardGamerApp.Services;
 using BoardGamerApp.ViewModels;
 using BoardGamerApp.Views;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace BoardGamerApp;
@@ -22,6 +23,9 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+		builder.Services.AddTransient<Home>();
+        builder.Services.AddTransient<HomeViewModel>();
+
         builder.Services.AddTransient<BoardGames>();
         builder.Services.AddTransient<BoardGamesViewModel>();
         builder.Services.AddSingleton<IGamesWebClient, GamesWebClientMock>();
