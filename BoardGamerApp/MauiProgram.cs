@@ -34,6 +34,10 @@ public static class MauiProgram
 		builder.Services.AddTransient<EventRatingViewModel>();
 		builder.Services.AddSingleton<IRatingWebClient, RatingWebClientMock>();
 
+        builder.Services.AddTransient<GameAppointments>();
+        builder.Services.AddTransient<GameAppointmentsViewModel>();
+        builder.Services.AddSingleton<IGameAppointmentWebClient, GameAppointmentWebClientMock>();
+
         return builder.Build();
 	}
 }
